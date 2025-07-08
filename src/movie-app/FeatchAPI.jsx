@@ -13,5 +13,11 @@ export function getMovies(keyword){
             }else{
                 return response.Search;
             }
-        })
+        });
+}
+
+export function getDetailsMovie(imdbid){
+    return fetch(`http://www.omdbapi.com/?apikey=236a868b&i=${imdbid}`)
+        .then(response => response.json())
+        .then(response => response);
 }
